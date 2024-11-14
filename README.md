@@ -1,44 +1,56 @@
-#SOLID Principles
+# SOLID Principles
 
-##Overview
-The goal of this project was to become more familiar with the SOLID principles. The SOLID principles are a set of five object-oriented design (OOD) principles by Robert C. Martin.
-In this assignment, we were to develop situations for three out of the five principles, where the principle was violated, and to then provide a solution to it.
+## Overview
+The goal of this project was to become more familiar with the SOLID principles. The SOLID principles are a set of five object-oriented design (OOD) principles introduced by Robert C. Martin.
 
-#SRP
+In this assignment, I developed situations demonstrating violations of three out of the five principles and then provided solutions to adhere to each principle.
 
-##Violation:
--The Icecream class contains attributes related to buying an icecream, as well as a method for calculating a discount.
--This violates SRP as a class should only have one responsibility.
+---
 
-##Solution:
--Move the method for calculating the discount to a seperate class, and added a method in icecream for applying a discount.
--This adheres to SRP as the logic for calculating the discount is different from the qualities of buying an icecream.
+### Single Responsibility Principle (SRP)
 
-##Importance:
-The Single Responsibility Principle is important for making code more reusable, readable, testable and scalable.
+#### Violation
+- The `Icecream` class contains attributes related to buying an ice cream, as well as a method for calculating a discount.
+- This violates SRP, as a class should only have **one responsibility**.
 
+#### Solution
+- Moved the discount calculation method to a separate class.
+- Added a method in the `Icecream` class for applying a discount.
+- This change adheres to SRP since the logic for calculating a discount is now separated from the core functionality of the `Icecream` class.
 
-#OCP
+#### Importance
+The Single Responsibility Principle is essential for making code more **reusable, readable, testable, and scalable**.
 
-##Violation:
--The StatsCalculator class would not still work for new types of players without changing the source code.
--This violates OCP as the method should be open for extension and closed for modification
+---
 
-##Solution:
--The solution was to add a player interface that has a method to calculatestats.
--This way, all types of players have to implement that interface and method, ensuring they can all do the things required for the calculator to be more open.
+### Open-Closed Principle (OCP)
 
-##Importance:
-The Open Closed Principle is important for allowing you to add more flexibility without changing your code.
+#### Violation
+- The `StatsCalculator` class could not accommodate new types of players without modifying its source code.
+- This violates OCP because the class should be **open for extension and closed for modification**.
 
-#ISP
+#### Solution
+- Created a `Player` interface with a `calculateStats` method.
+- Each type of player implements this interface and method, allowing `StatsCalculator` to handle new player types without modification.
 
-##Violation:
--The NPC and Player classes both implement the character interface, but NPC does not need one of its methods
--This violates ISP as the class should use all of the methods it has declared.
+#### Importance
+The Open-Closed Principle is vital for allowing flexibility without modifying existing code.
 
-##Solution:
--The solution was to split the interface up into multiple interfaces so that both the NPC and Player class only need to implement things they use.
+---
 
-##Importance:
-The Interface Segregation Principle is important because it prevents classes from having to implement methods they dont require, keeping code more simple and clean.
+### Interface Segregation Principle (ISP)
+
+#### Violation
+- Both `NPC` and `Player` classes implemented a `Character` interface, but `NPC` does not need all of its methods.
+- This violates ISP, as classes should **only implement methods they need**.
+
+#### Solution
+- Split the `Character` interface into multiple smaller interfaces, so `NPC` and `Player` only implement what they actually use.
+
+#### Importance
+The Interface Segregation Principle keeps code **simple and clean** by ensuring classes do not have to implement unnecessary methods.
+
+---
+
+## Conclusion
+By following these SOLID principles, we achieve code that is more modular, easier to maintain, and adaptable to future changes.
