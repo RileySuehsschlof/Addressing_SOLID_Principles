@@ -34,7 +34,11 @@ The Open Closed Principle is important for allowing you to add more flexibility 
 #ISP
 
 ##Violation:
+-The NPC and Player classes both implement the character interface, but NPC does not need one of its methods
+-This violates ISP as the class should use all of the methods it has declared.
 
 ##Solution:
+-The solution was to split the interface up into multiple interfaces so that both the NPC and Player class only need to implement things they use.
 
 ##Importance:
+The Interface Segregation Principle is important because it prevents classes from having to implement methods they dont require, keeping code more simple and clean.
