@@ -16,3 +16,24 @@ In this assignment, we were to develop situations for three out of the five prin
 
 ##Importance:
 The Single Responsibility Principle is important for making code more reusable, readable, testable and scalable.
+
+
+#OCP
+
+##Violation:
+-The StatsCalculator class would not still work for new types of players without changing the source code.
+-This violates OCP as the method should be open for extension and closed for modification
+
+##Solution:
+-The solution was to add a player interface that has a method to calculatestats.
+-This way, all types of players have to implement that interface and method, ensuring they can all do the things required for the calculator to be more open.
+
+##Importance:
+
+#ISP
+
+##Violation:
+
+##Solution:
+
+##Importance:
