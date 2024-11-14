@@ -29,6 +29,7 @@ The Single Responsibility Principle is important for making code more reusable, 
 -This way, all types of players have to implement that interface and method, ensuring they can all do the things required for the calculator to be more open.
 
 ##Importance:
+The Open Closed Principle is important for allowing you to add more flexibility without changing your code.
 
 #ISP
 
